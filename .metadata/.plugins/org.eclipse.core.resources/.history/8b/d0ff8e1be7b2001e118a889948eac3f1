@@ -1,0 +1,56 @@
+package com.budgetbotique.usermanagement.service;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.budgetbotique.usermanagement.controller.UserController;
+import com.budgetbotique.usermanagement.model.UserInfo;
+import com.budgetbotique.usermanagement.repository.UserInfoRepository;
+import com.budgetbotique.usermanagement.security.UserInfoDetails;
+
+@Service
+public class UserInfoService implements UserDetailsService { 
+	
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
+  
+    @Autowired
+    private UserInfoRepository repository; 
+  
+    @Autowired
+    private PasswordEncoder encoder; 
+    
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    	
+    	logger.info("Username"+ username);
+    	
+        java.util.Optional<UserInfo> userInfoOptional = repository.findByName(username);
+
+        if (userInfoOptional.isPresent()) {
+            UserInfo userInfo = userInfoOptional.get();
+
+            // Log the hashed password retrieved from the database
+            System.out.println("Retrieved hashed password from the database: " + userInfo.getPassword());
+
+            return new UserInfoDetails(userInfo);
+        } else {
+            throw new UsernameNotFoundException("User not found " + username);
+        }
+    }
+
+  
+    public String addUser(UserInfo userInfo) { 
+        userInfo.setPassword(encoder.encode(userInfo.getPassword())); 
+        repository.save(userInfo); 
+        return "User Added Successfully"; 
+    } 
+  
+  
+} 

@@ -1,0 +1,16 @@
+package com.budgetbotique.usermanagement;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+@SpringBootApplication
+@EntityScan(basePackages = {"com.budgetbotique.model", "other.packages.if.any"})
+public class BudgetBotiqueUserManagementMicroserviceApplication {
+
+	public static void main(String[] args) {
+		logger.info("Starting YourApplicationClass...");
+		SpringApplication.run(BudgetBotiqueUserManagementMicroserviceApplication.class, args);
+	}
+
+}

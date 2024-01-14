@@ -1,0 +1,5 @@
+package com.budgetbotique.service;
+
+public class UserService {
+
+}

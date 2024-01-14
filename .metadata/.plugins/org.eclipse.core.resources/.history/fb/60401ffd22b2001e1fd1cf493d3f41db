@@ -1,0 +1,36 @@
+package com.budgetbotique.usermanagement.repository;
+
+
+
+import com.budgetbotique.usermanagement.model.User;
+import com.budgetbotique.usermanagement.repository.UserRepository;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@DataJpaTest
+class UserRepositoryTest {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Test
+    void testExistsByUsername() {
+        // Save a test user to the in-memory database
+        User user = new User();
+        user.setUsername("testUser");
+        user.setPassword("testPassword");
+        userRepository.save(user);
+
+        // Test repository method
+        boolean result = userRepository.existsByUsername("testUser");
+
+        // Assertion
+        assertTrue(result);
+    }
+
+    // Add more test methods as needed
+}

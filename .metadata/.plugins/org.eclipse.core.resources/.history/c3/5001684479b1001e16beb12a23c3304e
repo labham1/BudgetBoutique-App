@@ -1,0 +1,5 @@
+package com.budgetbotique.repository;
+
+public class UserRepositoryTest {
+
+}

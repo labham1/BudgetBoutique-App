@@ -1,0 +1,22 @@
+package com.budgetbotique.usermanagement;
+
+import java.util.logging.Logger;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import com.budgetbotique.security.CustomAuthenticationFilter;
+
+@SpringBootApplication
+@EntityScan(basePackages = {"com.budgetbotique.model", "other.packages.if.any"})
+public class BudgetBotiqueUserManagementMicroserviceApplication {
+
+    private static final Logger log = Logger.getLogger(BudgetBotiqueUserManagementMicroserviceApplication.class.getName());
+
+	public static void main(String[] args) {
+		log.info("Starting YourApplicationClass...");
+		SpringApplication.run(BudgetBotiqueUserManagementMicroserviceApplication.class, args);
+	}
+
+}

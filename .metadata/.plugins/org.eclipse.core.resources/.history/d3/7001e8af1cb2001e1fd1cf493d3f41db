@@ -1,0 +1,5 @@
+package com.budgetbotique.usermanagement.service;
+
+public class UserInfoService {
+
+}

@@ -1,0 +1,79 @@
+package com.budgetbotique.security;
+
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Date;
+
+public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+    private final AuthenticationManager authenticationManager;
+
+    public CustomAuthenticationFilter(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+        setFilterProcessesUrl("/api/login");
+    }
+
+    @Override
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+            throws AuthenticationException {
+        try {
+            UserCredentials credentials = new ObjectMapper().readValue(request.getInputStream(), UserCredentials.class);
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+                    credentials.getUsername(),
+                    credentials.getPassword(),
+                    Collections.emptyList()
+            );
+
+            return authenticationManager.authenticate(authenticationToken);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    protected void successfulAuthentication(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            FilterChain chain,
+            Authentication authResult) throws IOException, ServletException {
+        String token = generateJwtToken(authResult.getName());
+        addTokenToResponseHeader(response, token);
+    }
+
+    private String generateJwtToken(String username) {
+        String secretKey = "yourSecretKey";
+        long expirationTime = 3600000; // 1 hour in milliseconds
+
+        return Jwts.builder()
+                .setSubject(username)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + expirationTime))
+                .signWith(SignatureAlgorithm.HS256, secretKey)
+                .compact();
+    }
+
+    private void addTokenToResponseHeader(HttpServletResponse response, String token) {
+        response.addHeader("Authorization", "Bearer " + token);
+    }
+}
+    private void addTokenToResponseHeader(HttpServletResponse response, String token) {
+        // Add the token to the response header
+        response.addHeader("Authorization", "Bearer " + token);
+    }
+
+    // You may need to customize this class further based on your specific requirements
+}

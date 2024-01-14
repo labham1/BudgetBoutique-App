@@ -1,0 +1,37 @@
+package com.budgetbotique.usermanagement.service;
+
+import com.budgetbotique.usermanagement.repository.UserRepository;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+@ExtendWith(MockitoExtension.class)
+class UserServiceTest {
+
+    @Mock
+    private UserRepository userRepository;
+
+    @InjectMocks
+    private UserService userService;
+
+    @Test
+    void testFindUserByUsernameWithRoles() {
+        // Mocking repository behavior
+        when(userRepository.findByUsernameWithRoles("testUser")).thenReturn(Optional.of(new User()));
+
+        // Test service method
+        Optional<User> result = userService.findUserByUsernameWithRoles("testUser");
+
+        // Assertions
+        assertEquals(Optional.of(new User()), result);
+    }
+
+    // Add more test methods as needed
+}

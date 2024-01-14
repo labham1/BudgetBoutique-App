@@ -1,0 +1,81 @@
+package com.budgetbotique.controller;
+
+
+
+import com.budgetbotique.model.User;
+import com.budgetbotique.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api")
+public class UserController {
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public UserController(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
+        // Check if the username or email is already registered
+        if (userRepository.existsByUsername(user.getUsername()) || userRepository.existsByEmail(user.getEmail())) {
+            return ResponseEntity.badRequest().body("Username or email is already taken.");
+        }
+
+        // Assign default role(s) to the user (e.g., ROLE_USER)
+        user.setRoles(Collections.singleton(UserRole.ROLE_USER));
+
+        // Encode the user's password before saving it to the database
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+        // Save the user to the database
+        userRepository.save(user);
+
+        return ResponseEntity.ok("User registered successfully!");
+    }
+
+    @GetMapping("/user/{username}")
+    public ResponseEntity<User> getUserProfile(@PathVariable String username) {
+        User user = userRepository.findByUsername(username);
+
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/user/update")
+    public ResponseEntity<String> updateUserProfile(@RequestBody User updatedUser) {
+        // Retrieve the currently authenticated user
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+
+        // Retrieve the user from the repository
+        User currentUser = userRepository.findByUsername(currentUsername);
+
+        if (currentUser != null) {
+            // Update user details (customize based on your requirements)
+            currentUser.setUsername(updatedUser.getUsername());
+            currentUser.setEmail(updatedUser.getEmail());
+            // Update other fields as needed
+
+            // Save the updated user to the repository
+            userRepository.save(currentUser);
+
+            return ResponseEntity.ok("User profile updated successfully!");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+}
+

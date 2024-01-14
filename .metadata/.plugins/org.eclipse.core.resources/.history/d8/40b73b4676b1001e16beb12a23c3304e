@@ -1,0 +1,5 @@
+package com.budgetbotique.enums;
+
+public class UserRole {
+
+}

@@ -1,0 +1,23 @@
+package com.budgetbotique.usermanagement.model;
+
+
+import java.util.Set;
+import javax.persistence.*;
+
+import com.budgetbotique.usermanagement.enums.UserRole;
+
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class UserInfo { 
+  
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    private int id; 
+    private String name; 
+    private String email; 
+    private String password; 
+    private String roles; 
+  
+} 

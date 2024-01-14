@@ -1,0 +1,40 @@
+package com.budgetbotique.usermanagement.integration;
+
+import com.budgetbotique.model.User;
+import com.budgetbotique.service.UserService;
+import com.budgetbotique.usermanagement.repository.UserRepository;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@SpringBootTest
+class UserIntegrationTest {
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @Test
+    void testFindUserByUsernameWithRoles() {
+        // Save a test user to the database
+        User user = new User();
+        user.setUsername("testUser");
+        user.setPassword("testPassword");
+        userRepository.save(user);
+
+        // Test service method
+        Optional<User> result = userService.findUserByUsernameWithRoles("testUser");
+
+        // Assertions
+        assertEquals(Optional.of(user), result);
+    }
+
+    // Add more integration test methods as needed
+}

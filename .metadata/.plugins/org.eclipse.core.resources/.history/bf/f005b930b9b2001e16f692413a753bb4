@@ -1,0 +1,52 @@
+@Configuration
+@EnableWebSecurity
+@EnableMethodSecurity
+public class SecurityConfig { 
+  
+    @Autowired
+    private JwtAuthFilter authFilter; 
+  
+    // User Creation 
+    @Bean
+    public UserDetailsService userDetailsService() { 
+        return new UserInfoService(); 
+    } 
+  
+    // Configuring HttpSecurity 
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable()
+            .authorizeRequests(authorizeRequests ->
+                authorizeRequests
+                    .antMatchers("/auth/welcome", "/auth/addNewUser", "/auth/generateToken").permitAll()
+                    .antMatchers("/auth/user/**").authenticated()
+                    .antMatchers("/auth/admin/**").authenticated()
+            )
+            .sessionManagement(sessionManagement ->
+                sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            )
+            .authenticationProvider(authenticationProvider())
+            .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class);
+
+        return http.build();
+    }
+
+    // Password Encoding 
+    @Bean
+    public PasswordEncoder passwordEncoder() { 
+        return new BCryptPasswordEncoder(); 
+    } 
+  
+    @Bean
+    public AuthenticationProvider authenticationProvider() { 
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider(); 
+        authenticationProvider.setUserDetailsService(userDetailsService()); 
+        authenticationProvider.setPasswordEncoder(passwordEncoder()); 
+        return authenticationProvider; 
+    } 
+  
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception { 
+        return config.getAuthenticationManager(); 
+    } 
+}

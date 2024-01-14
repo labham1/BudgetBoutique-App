@@ -1,0 +1,5 @@
+package com.budgetbotique.usermanagement.security;
+
+public class AuthRequest {
+
+}

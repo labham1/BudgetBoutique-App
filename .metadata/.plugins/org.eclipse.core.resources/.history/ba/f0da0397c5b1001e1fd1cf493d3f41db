@@ -1,0 +1,5 @@
+package com.budgetbotique.usermanagement.controller;
+
+public class UserController {
+
+}

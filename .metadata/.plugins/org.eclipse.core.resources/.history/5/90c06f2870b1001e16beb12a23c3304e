@@ -1,0 +1,72 @@
+package com.budgetbotique.security;
+
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Collections;
+
+public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
+
+    private final AuthenticationManager authenticationManager;
+
+    public CustomAuthenticationFilter(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+
+        // Set the login URL
+        setFilterProcessesUrl("/api/login");
+    }
+
+    @Override
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
+            throws AuthenticationException {
+        try {
+            // Read user credentials from the request
+            UserCredentials credentials = new ObjectMapper().readValue(request.getInputStream(), UserCredentials.class);
+
+            // Create an authentication token
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+                    credentials.getUsername(),
+                    credentials.getPassword(),
+                    Collections.emptyList()
+            );
+
+            // Authenticate the user
+            return authenticationManager.authenticate(authenticationToken);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    protected void successfulAuthentication(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            FilterChain chain,
+            Authentication authResult) throws IOException, ServletException {
+        // Generate and send the JWT token upon successful authentication
+        // Implement this part based on your chosen JWT library
+        // For example, using io.jsonwebtoken library:
+        // String token = JwtUtils.generateToken(authResult.getName(), authResult.getAuthorities());
+        // Then, you can add the token to the response header or body as needed.
+
+        // For simplicity, let's assume you have a method to add the token to the response header:
+        // addTokenToResponseHeader(response, token);
+    }
+
+    private void addTokenToResponseHeader(HttpServletResponse response, String token) {
+        // Add the token to the response header
+        response.addHeader("Authorization", "Bearer " + token);
+    }
+
+    // You may need to customize this class further based on your specific requirements
+}

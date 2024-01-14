@@ -1,0 +1,49 @@
+package com.budgetbotique.usermanagement.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.budgetbotique.usermanagement.model.UserInfo;
+import com.budgetbotique.usermanagement.repository.UserInfoRepository;
+import com.budgetbotique.usermanagement.security.UserInfoDetails;
+
+import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
+
+@Service
+public class UserInfoService implements UserDetailsService { 
+  
+    @Autowired
+    private UserInfoRepository repository; 
+  
+    @Autowired
+    private PasswordEncoder encoder; 
+    
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        java.util.Optional<UserInfo> userInfoOptional = repository.findByName(username);
+
+        if (userInfoOptional.isPresent()) {
+            UserInfo userInfo = userInfoOptional.get();
+
+            // Log the hashed password retrieved from the database
+            System.out.println("Retrieved hashed password from the database: " + userInfo.getPassword());
+
+            return new UserInfoDetails(userInfo);
+        } else {
+            throw new UsernameNotFoundException("User not found " + username);
+        }
+    }
+
+  
+    public String addUser(UserInfo userInfo) { 
+        userInfo.setPassword(encoder.encode(userInfo.getPassword())); 
+        repository.save(userInfo); 
+        return "User Added Successfully"; 
+    } 
+  
+  
+} 

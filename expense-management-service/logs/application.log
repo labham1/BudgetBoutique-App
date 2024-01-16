@@ -1,0 +1,158 @@
+2024-01-16 17:55:04 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Starting BudgetBotiqueExpenseManagementMicroserviceApplication using Java 17.0.7 with PID 12204 (D:\STS_PROJECTS\BudgetBoutique\expense-management-service\target\classes started by labha in D:\STS_PROJECTS\BudgetBoutique\expense-management-service)
+2024-01-16 17:55:04 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-16 17:55:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-16 17:55:04 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-16 17:55:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-16 17:55:05 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interface.
+2024-01-16 17:55:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-01-16 17:55:06 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-16 17:55:06 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-16 17:55:06 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-16 17:55:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2009 ms
+2024-01-16 17:55:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-01-16 17:55:06 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d86360b
+2024-01-16 17:55:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-01-16 17:55:07 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/expense_management_db'
+2024-01-16 17:55:07 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-16 17:55:07 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-16 17:55:07 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-01-16 17:55:07 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-16 17:55:07 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-16 17:55:07 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-01-16 17:55:09 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-16 17:55:09 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-16 17:55:09 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-16 17:55:09 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2024-01-16 17:55:09 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-01-16 17:55:09 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-16 17:55:09 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-16 17:55:10 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 33c0ab2e-b178-45ee-98ad-078b5fa7f9f8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-01-16 17:55:10 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@461c1317, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7966af44, org.springframework.security.web.context.SecurityContextHolderFilter@7733fd95, org.springframework.security.web.header.HeaderWriterFilter@5fbbcb1b, org.springframework.web.filter.CorsFilter@675c7c18, org.springframework.security.web.csrf.CsrfFilter@6394101, org.springframework.security.web.authentication.logout.LogoutFilter@a32ccf5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3534e004, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@12c66b96, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@61559471, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4c0e6971, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@463978e7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5d5e3a0a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47f7b7e7, org.springframework.security.web.access.ExceptionTranslationFilter@4833cb42, org.springframework.security.web.access.intercept.AuthorizationFilter@6cce749]
+2024-01-16 17:55:10 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-01-16 17:55:10 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2024-01-16 17:55:10 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Started BudgetBotiqueExpenseManagementMicroserviceApplication in 6.771 seconds (process running for 7.997)
+2024-01-16 17:55:16 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-16 17:55:16 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-16 17:55:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-01-16 17:55:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-01-16 17:55:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-01-16 17:55:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@35eaa3f5
+2024-01-16 17:55:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@28726bf3
+2024-01-16 17:55:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-01-16 17:55:16 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2024-01-16 17:55:17 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [192] milliseconds.
+2024-01-16 17:55:54 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-01-16 17:55:54 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-16 17:55:54 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-01-16 17:55:54 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-01-16 17:56:05 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Starting BudgetBotiqueExpenseManagementMicroserviceApplication using Java 17.0.7 with PID 9564 (D:\STS_PROJECTS\BudgetBoutique\expense-management-service\target\classes started by labha in D:\STS_PROJECTS\BudgetBoutique\expense-management-service)
+2024-01-16 17:56:05 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-16 17:56:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-16 17:56:05 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-16 17:56:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-16 17:56:06 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 1 JPA repository interface.
+2024-01-16 17:56:06 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-01-16 17:56:06 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-16 17:56:06 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-16 17:56:06 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-16 17:56:06 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1575 ms
+2024-01-16 17:56:06 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-01-16 17:56:07 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8511b6a
+2024-01-16 17:56:07 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-01-16 17:56:07 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/expense_management_db'
+2024-01-16 17:56:07 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-16 17:56:07 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-16 17:56:07 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-01-16 17:56:07 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-16 17:56:07 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-16 17:56:07 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-01-16 17:56:08 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-16 17:56:08 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-16 17:56:09 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-16 17:56:09 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2024-01-16 17:56:09 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-01-16 17:56:09 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-16 17:56:09 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-16 17:56:09 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 3f3897e4-a31a-4baf-8d09-a836e1c00896
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-01-16 17:56:09 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a80f717, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5161972c, org.springframework.security.web.context.SecurityContextHolderFilter@79057440, org.springframework.security.web.header.HeaderWriterFilter@66f7f3c4, org.springframework.web.filter.CorsFilter@160fb5fc, org.springframework.security.web.csrf.CsrfFilter@18fa3d5c, org.springframework.security.web.authentication.logout.LogoutFilter@525fce04, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@d0a0be6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a5a191e, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3f63e70e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@71e749b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d09ded9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@791a8ec5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22c687ba, org.springframework.security.web.access.ExceptionTranslationFilter@7f03ec95, org.springframework.security.web.access.intercept.AuthorizationFilter@7d80fc58]
+2024-01-16 17:56:09 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-01-16 17:56:09 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2024-01-16 17:56:09 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Started BudgetBotiqueExpenseManagementMicroserviceApplication in 5.105 seconds (process running for 6.644)
+2024-01-16 17:56:16 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-16 17:56:16 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-16 17:56:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-01-16 17:56:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-01-16 17:56:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-01-16 17:56:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7e9dfe6d
+2024-01-16 17:56:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@44af25ef
+2024-01-16 17:56:16 [http-nio-8081-exec-2] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-01-16 17:56:16 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2024-01-16 17:59:08 [RMI TCP Connection(6)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-01-16 17:59:08 [RMI TCP Connection(6)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-16 17:59:08 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-01-16 17:59:08 [RMI TCP Connection(6)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-01-16 17:59:23 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Starting BudgetBotiqueExpenseManagementMicroserviceApplication using Java 17.0.7 with PID 3768 (D:\STS_PROJECTS\BudgetBoutique\expense-management-service\target\classes started by labha in D:\STS_PROJECTS\BudgetBoutique\expense-management-service)
+2024-01-16 17:59:23 [restartedMain] DEBUG c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-16 17:59:23 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-16 17:59:25 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Starting BudgetBotiqueExpenseManagementMicroserviceApplication using Java 17.0.7 with PID 3864 (D:\STS_PROJECTS\BudgetBoutique\expense-management-service\target\classes started by labha in D:\STS_PROJECTS\BudgetBoutique\expense-management-service)
+2024-01-16 17:59:25 [restartedMain] DEBUG c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Running with Spring Boot v3.2.1, Spring v6.1.2
+2024-01-16 17:59:25 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-01-16 17:59:25 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-01-16 17:59:25 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-01-16 17:59:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-16 17:59:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 1 JPA repository interface.
+2024-01-16 17:59:26 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2024-01-16 17:59:26 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-01-16 17:59:26 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.17]
+2024-01-16 17:59:26 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-01-16 17:59:26 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1456 ms
+2024-01-16 17:59:26 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-01-16 17:59:27 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8511b6a
+2024-01-16 17:59:27 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-01-16 17:59:27 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/expense_management_db'
+2024-01-16 17:59:27 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-16 17:59:27 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-16 17:59:27 [restartedMain] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2024-01-16 17:59:27 [restartedMain] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-16 17:59:28 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-01-16 17:59:28 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-01-16 17:59:29 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-16 17:59:29 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-16 17:59:29 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-16 17:59:29 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping - 6 mappings in 'requestMappingHandlerMapping'
+2024-01-16 17:59:29 [restartedMain] DEBUG o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-01-16 17:59:29 [restartedMain] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-01-16 17:59:29 [restartedMain] DEBUG o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-01-16 17:59:29 [restartedMain] WARN  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: bd00f8cc-aeaf-40af-97f9-efb46be17c5a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2024-01-16 17:59:30 [restartedMain] INFO  o.s.s.w.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27870a96, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@383acea9, org.springframework.security.web.context.SecurityContextHolderFilter@17a7e98f, org.springframework.security.web.header.HeaderWriterFilter@13b38c33, org.springframework.web.filter.CorsFilter@3a285630, org.springframework.security.web.csrf.CsrfFilter@47ebed89, org.springframework.security.web.authentication.logout.LogoutFilter@791a8ec5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@627f2711, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@18efce3a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@ae291f1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@27f70aad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4f1f9023, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79011898, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@152ee981, org.springframework.security.web.access.ExceptionTranslationFilter@249e67e0, org.springframework.security.web.access.intercept.AuthorizationFilter@25e3c879]
+2024-01-16 17:59:30 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2024-01-16 17:59:30 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path ''
+2024-01-16 17:59:30 [restartedMain] INFO  c.b.e.BudgetBotiqueExpenseManagementMicroserviceApplication - Started BudgetBotiqueExpenseManagementMicroserviceApplication in 5.329 seconds (process running for 6.197)
+2024-01-16 17:59:33 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-01-16 17:59:33 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-01-16 17:59:33 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-01-16 17:59:33 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-01-16 17:59:33 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-01-16 17:59:33 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@518c2694
+2024-01-16 17:59:33 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@5300476d
+2024-01-16 17:59:33 [http-nio-8081-exec-1] DEBUG o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-01-16 17:59:33 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-01-16 18:27:38 [RMI TCP Connection(30)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2024-01-16 18:27:38 [RMI TCP Connection(30)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-01-16 18:27:38 [RMI TCP Connection(30)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-01-16 18:27:38 [RMI TCP Connection(30)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

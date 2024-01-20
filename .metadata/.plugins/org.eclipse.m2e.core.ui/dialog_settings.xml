@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\STS_PROJECTS\BudgetBoutique\api-gateway-budgetbotique"/>
+			<item value="D:\STS_PROJECTS\BudgetBoutique\expense-management-service"/>
 			<item value="D:\STS_PROJECTS\BudgetBoutique\user-management-service"/>
 		</list>
 		<list key="projectNameTemplate">

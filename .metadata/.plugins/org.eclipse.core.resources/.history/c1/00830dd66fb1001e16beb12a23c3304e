@@ -1,5 +1,0 @@
-package com.budgetbotique.security;
-
-public class CustomAuthenticationFilter {
-
-}

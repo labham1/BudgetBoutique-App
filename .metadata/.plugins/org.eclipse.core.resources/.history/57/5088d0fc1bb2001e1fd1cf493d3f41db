@@ -1,5 +1,0 @@
-package com.budgetbotique.usermanagement.security;
-
-public class JwtAuthFilter {
-
-}

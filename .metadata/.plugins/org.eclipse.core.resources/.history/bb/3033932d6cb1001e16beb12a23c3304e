@@ -1,5 +1,0 @@
-package com.budgetbotique.repository;
-
-public interface UserRepository {
-
-}

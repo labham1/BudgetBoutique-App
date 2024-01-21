@@ -40,7 +40,7 @@ This repository contains the backend microservices for an expense management web
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/expense-management-backend.git
+   git clone https://github.com/labham1/BudgetBoutique-App.git
 
 
 

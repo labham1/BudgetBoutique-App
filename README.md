@@ -34,6 +34,7 @@ This repository contains the backend microservices for an expense management web
 ### Prerequisites
 
 - Node.js
+- JDK 17
 
 ### Installation
 
